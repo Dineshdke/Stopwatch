@@ -10,6 +10,11 @@ function App() {
     setButton(!button);
   }
 
+  const handleReset = () => {
+    setButton(false);
+    setTimer(0);
+  }
+
   const format = (timer)=>{
     const mins = Math.floor(timer/60);
     timer = timer%60;
@@ -31,7 +36,7 @@ function App() {
       <h1>Stopwatch</h1>
       <h3>{format(timer)}</h3>
       <button onClick={handleClick}>{button?'Stop':'Start'}</button>
-      <button>Reset</button>
+      <button onClick={handleReset}>Reset</button>
     </div>
   );
 }
